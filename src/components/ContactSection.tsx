@@ -3,9 +3,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa'
-
-const whatsappNumber = '5537999813287'
-const whatsappMessage = encodeURIComponent('Olá! Gostaria de conhecer os tecidos tecnológicos da Real Têxtil MG.')
+import { COMPANY_INFO, WHATSAPP_URL } from '../config/constants'
 
 interface ContactSectionProps {
   onRequestQuote?: () => void
@@ -34,27 +32,28 @@ const ContactSection = ({ onRequestQuote }: ContactSectionProps) => {
                 size="lg"
                 variant="outline-primary"
                 className="d-flex align-items-center gap-2"
-                href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                href={WHATSAPP_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="Conversar no WhatsApp"
               >
                 <FaWhatsapp /> Conversar no WhatsApp
               </Button>
               <div className="d-flex align-items-center gap-3 social-links">
                 <a
                   className="social-icon"
-                  href="https://www.facebook.com/realtextilmg"
+                  href={COMPANY_INFO.social.facebook}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                 >
                   <FaFacebookF />
                 </a>
                 <a
                   className="social-icon"
-                  href="https://www.instagram.com/realtextilmg"
+                  href={COMPANY_INFO.social.instagram}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
                   <FaInstagram />
@@ -62,8 +61,8 @@ const ContactSection = ({ onRequestQuote }: ContactSectionProps) => {
               </div>
             </div>
             <div className="contact-info mt-4">
-              <p className="mb-1">Telefone: <a href="tel:+553732137711">(37) 3213-7711</a></p>
-              <p className="mb-1">WhatsApp: <a href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}> (37) 99981-3287</a></p>
+              <p className="mb-1">Telefone: <a href={`tel:+55${COMPANY_INFO.phone.replace(/\D/g, '')}`}>{COMPANY_INFO.phone}</a></p>
+              <p className="mb-1">WhatsApp: <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{COMPANY_INFO.whatsapp.formatted}</a></p>
             </div>
           </Col>
           <Col md={6}>
@@ -73,7 +72,7 @@ const ContactSection = ({ onRequestQuote }: ContactSectionProps) => {
                 Conte com especialistas para orientar na escolha das melhores soluções têxteis para sua demanda.
               </p>
               <ul className="list-unstyled">
-                <li>• Atendimento de segunda a sexta, das 8h às 18h</li>
+                <li>• {COMPANY_INFO.businessHours.weekdays}</li>
                 <li>• Amostras personalizadas e suporte técnico</li>
                 <li>• Entregas para todo o Brasil</li>
               </ul>

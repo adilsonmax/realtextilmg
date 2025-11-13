@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 
@@ -6,6 +7,19 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
+  // Preload da imagem do hero
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/Hero-3.jpg'
+    document.head.appendChild(link)
+
+    return () => {
+      document.head.removeChild(link)
+    }
+  }, [])
+
   return (
     <section id="inicio" className="hero-section d-flex align-items-center">
       <div
@@ -16,6 +30,8 @@ const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat'
         }}
+        role="img"
+        aria-label="Atleta em movimento representando performance e tecnologia têxtil"
       />
       <div className="hero-overlay" />
       <Container className="py-4 py-md-5 position-relative">

@@ -50,9 +50,10 @@ const ProductGallery = () => {
     return (
       <section id="galeria" className="section-padding">
         <Container>
-          <div className="text-center">
+          <div className="text-center py-5">
             <h2 className="mb-4">Galeria de Produtos</h2>
-            <p className="text-muted">Catálogo em construção. Produtos serão adicionados em breve.</p>
+            <p className="text-muted lead">Catálogo em construção. Produtos serão adicionados em breve.</p>
+            <p className="text-muted small mt-3">Entre em contato conosco para conhecer nossos produtos.</p>
           </div>
         </Container>
       </section>

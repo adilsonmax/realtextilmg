@@ -33,8 +33,11 @@ function App() {
 
   return (
     <div className="app-wrapper">
+      <a href="#main-content" className="skip-to-main">
+        Pular para o conteúdo principal
+      </a>
       <NavigationBar />
-      <main>
+      <main id="main-content">
         {currentPage === 'home' ? (
           <>
             <HeroSection onRequestQuote={() => setShowQuoteForm(true)} />

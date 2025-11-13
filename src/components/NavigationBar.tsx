@@ -6,18 +6,18 @@ const NavigationBar = () => {
   return (
     <Navbar expand="lg" bg="dark" variant="dark" fixed="top" className="shadow-sm navigation-bar">
       <Container>
-        <Navbar.Brand href="#inicio" className="fw-bold text-white">
+        <Navbar.Brand href="#inicio" className="fw-bold text-white" aria-label="Real Têxtil MG - Página inicial">
           Real Têxtil MG
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="main-navbar" />
+        <Navbar.Toggle aria-controls="main-navbar" aria-label="Alternar menu de navegação" />
         <Navbar.Collapse id="main-navbar">
-          <Nav className="ms-auto gap-2">
-            <Nav.Link href="#inicio" onClick={() => window.location.hash = ''}>Início</Nav.Link>
-            <Nav.Link href="#catalogo">Linhas</Nav.Link>
-            <Nav.Link href="#galeria">Catálogo</Nav.Link>
-            <Nav.Link href="#promocoes">Promoções</Nav.Link>
-            <Nav.Link href="#contato">Fale Conosco</Nav.Link>
-            <Nav.Link href="#localizacao">Localização</Nav.Link>
+          <Nav className="ms-auto gap-2" role="navigation" aria-label="Menu principal">
+            <Nav.Link href="#inicio" onClick={() => window.location.hash = ''} aria-label="Ir para seção Início">Início</Nav.Link>
+            <Nav.Link href="#catalogo" aria-label="Ir para seção Linhas de Tecidos">Linhas</Nav.Link>
+            <Nav.Link href="#galeria" aria-label="Ir para seção Catálogo de Produtos">Catálogo</Nav.Link>
+            <Nav.Link href="#promocoes" aria-label="Ir para seção Promoções">Promoções</Nav.Link>
+            <Nav.Link href="#contato" aria-label="Ir para seção Fale Conosco">Fale Conosco</Nav.Link>
+            <Nav.Link href="#localizacao" aria-label="Ir para seção Localização">Localização</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

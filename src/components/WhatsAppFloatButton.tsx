@@ -1,13 +1,11 @@
 import { FaWhatsapp } from 'react-icons/fa'
+import { WHATSAPP_URL } from '../config/constants'
 
 const WhatsAppFloatButton = () => {
-  const whatsappNumber = '5537999813287'
-  const whatsappMessage = encodeURIComponent('Olá! Gostaria de conhecer os tecidos tecnológicos da Real Têxtil MG.')
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   return (
     <a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-float-button"

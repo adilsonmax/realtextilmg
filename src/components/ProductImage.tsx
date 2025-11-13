@@ -5,11 +5,13 @@ interface ProductImageProps {
   alt: string
   className?: string
   fallbackSrc?: string
+  eager?: boolean
 }
 
-const ProductImage = ({ src, alt, className = '', fallbackSrc }: ProductImageProps) => {
+const ProductImage = ({ src, alt, className = '', fallbackSrc, eager = false }: ProductImageProps) => {
   const [imgSrc, setImgSrc] = useState(src)
   const [hasError, setHasError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const defaultFallback = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2Y1ZjVmNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZW0gZG8gUHJvZHV0bzwvdGV4dD48L3N2Zz4='
 
@@ -17,24 +19,57 @@ const ProductImage = ({ src, alt, className = '', fallbackSrc }: ProductImagePro
   useEffect(() => {
     setImgSrc(src)
     setHasError(false)
+    setIsLoading(true)
   }, [src])
 
   const handleError = () => {
     if (!hasError) {
       setHasError(true)
       setImgSrc(fallbackSrc || defaultFallback)
+      setIsLoading(false)
     }
   }
 
+  const handleLoad = () => {
+    setIsLoading(false)
+  }
+
   return (
-    <img
-      src={imgSrc}
-      alt={alt}
-      className={className}
-      onError={handleError}
-      loading="lazy"
-      style={{ display: 'block', width: '100%', height: '100%' }}
-    />
+    <div className="product-image-container" style={{ position: 'relative', width: '100%', height: '100%' }}>
+      {isLoading && (
+        <div 
+          className="image-skeleton" 
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
+            backgroundSize: '200% 100%',
+            animation: 'skeleton-loading 1.5s ease-in-out infinite',
+            borderRadius: 'inherit'
+          }}
+          aria-hidden="true"
+        />
+      )}
+      <img
+        src={imgSrc}
+        alt={alt}
+        className={className}
+        onError={handleError}
+        onLoad={handleLoad}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        style={{ 
+          display: 'block', 
+          width: '100%', 
+          height: '100%',
+          opacity: isLoading ? 0 : 1,
+          transition: 'opacity 0.3s ease-in-out'
+        }}
+      />
+    </div>
   )
 }
 

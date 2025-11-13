@@ -159,11 +159,15 @@ const CatalogPage = () => {
         <Container>
           {filteredProducts.length === 0 ? (
             <div className="text-center py-5">
-              <p className="lead text-muted">Nenhum produto encontrado com os filtros selecionados.</p>
-              <Button variant="outline-primary" onClick={() => {
-                setSelectedCategory('Todos')
-                setSearchTerm('')
-              }}>
+              <p className="lead text-muted mb-4">Nenhum produto encontrado com os filtros selecionados.</p>
+              <Button 
+                variant="outline-primary" 
+                onClick={() => {
+                  setSelectedCategory('Todos')
+                  setSearchTerm('')
+                }}
+                aria-label="Limpar todos os filtros e mostrar todos os produtos"
+              >
                 Limpar Filtros
               </Button>
             </div>
@@ -295,7 +299,7 @@ const CatalogPage = () => {
                     <Badge bg={getCategoryColor(selectedProduct.category)} className="mb-2">
                       {selectedProduct.category}
                     </Badge>
-                    <p className="mb-1" style={{ color: '#ffffff' }}><strong>Código:</strong> {selectedProduct.code}</p>
+                    <p className="mb-1 product-code-text"><strong>Código:</strong> {selectedProduct.code}</p>
                   </div>
 
                   {selectedProduct.fullDescription && (
@@ -365,10 +369,21 @@ const CatalogPage = () => {
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleCloseModal}>
+              <Button variant="secondary" onClick={handleCloseModal} aria-label="Fechar modal">
                 Fechar
               </Button>
-              <Button variant="primary" href="#contato">
+              <Button 
+                variant="primary" 
+                onClick={() => {
+                  handleCloseModal()
+                  // Navegar para contato após fechar modal
+                  setTimeout(() => {
+                    window.location.hash = '#contato'
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }, 300)
+                }}
+                aria-label="Solicitar orçamento para este produto"
+              >
                 Solicitar Orçamento
               </Button>
             </Modal.Footer>
