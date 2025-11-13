@@ -144,31 +144,41 @@ main {
 }
 
 .logo-image {
-  height: 70px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+@media (min-width: 768px) {
+  .logo-image {
+    height: 60px;
+  }
 }
 
 @media (min-width: 992px) {
   .logo-image {
-    height: 90px;
+    height: 70px;
   }
 }
 
 .logo-image:hover {
   transform: scale(1.05);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(79, 195, 255, 0.5));
 }
 
 /* Hero Section */
 .hero-section {
-  min-height: 70vh;
-  max-height: 800px;
+  min-height: 85vh;
   display: flex;
   position: relative;
   width: 100%;
   overflow: hidden;
   align-items: center;
+  margin-top: -72px;
+  padding-top: 72px;
+  background-color: #152234;
 }
 
 .hero-background {
@@ -178,8 +188,9 @@ main {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center center;
+  background-position: center right;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: 0;
@@ -187,6 +198,10 @@ main {
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Garantir que a imagem ativa seja renderizada corretamente */
@@ -198,27 +213,47 @@ main {
 /* Ajustes específicos para diferentes tamanhos de tela */
 @media (min-width: 768px) {
   .hero-section {
-    min-height: 75vh;
-    max-height: 900px;
+    min-height: 90vh;
   }
   
   .hero-background {
+    background-position: center right;
     background-size: cover;
-    background-position: center 35%;
   }
 }
 
 @media (min-width: 1200px) {
+  .hero-section {
+    min-height: 95vh;
+  }
+  
   .hero-background {
-    background-position: center 40%;
+    background-position: center right;
+    background-size: cover;
   }
 }
 
-/* Para telas muito largas, usar contain se necessário */
+/* Para telas muito largas */
 @media (min-width: 1600px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+  
   .hero-background {
+    background-position: center right;
     background-size: cover;
-    background-position: center 45%;
+  }
+}
+
+/* Mobile - desabilitar fixed attachment para melhor performance */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .hero-background {
+    background-attachment: scroll;
+    background-position: center center;
   }
 }
 
@@ -230,9 +265,9 @@ main {
   height: 100%;
   background: linear-gradient(
     135deg, 
-    rgba(21, 34, 52, 0.6) 0%, 
-    rgba(21, 34, 52, 0.4) 50%,
-    rgba(21, 34, 52, 0.5) 100%
+    rgba(21, 34, 52, 0.4) 0%, 
+    rgba(21, 34, 52, 0.2) 40%,
+    rgba(21, 34, 52, 0.3) 100%
   );
   z-index: 1;
 }
@@ -247,8 +282,8 @@ main {
   height: 100%;
   background: radial-gradient(
     ellipse at left center,
-    rgba(21, 34, 52, 0.3) 0%,
-    transparent 60%
+    rgba(21, 34, 52, 0.5) 0%,
+    transparent 70%
   );
   z-index: 1;
 }
@@ -1297,14 +1332,14 @@ main {
   }
 
   .hero-section {
-    min-height: 60vh;
-    max-height: 600px;
+    min-height: 80vh;
     text-align: center;
   }
   
   .hero-background {
     background-size: cover;
-    background-position: center 50%;
+    background-position: center center;
+    background-attachment: scroll;
   }
   
   /* Em mobile, garantir que a imagem não corte elementos importantes */
@@ -1327,7 +1362,7 @@ main {
   }
   
   .logo-image {
-    height: 60px;
+    height: 45px;
   }
 
   .logo-main {

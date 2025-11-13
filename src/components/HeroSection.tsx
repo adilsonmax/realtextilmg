@@ -27,8 +27,9 @@ const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
         style={{
           backgroundImage: 'url(/images/Hero-3.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat'
+          backgroundPosition: 'center right',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
         role="img"
         aria-label="Atleta em movimento representando performance e tecnologia têxtil"

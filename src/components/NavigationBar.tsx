@@ -1,13 +1,14 @@
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import Logo from './Logo'
 
 const NavigationBar = () => {
   return (
     <Navbar expand="lg" bg="dark" variant="dark" fixed="top" className="shadow-sm navigation-bar">
       <Container>
-        <Navbar.Brand href="#inicio" className="fw-bold text-white" aria-label="Real Têxtil MG - Página inicial">
-          Real Têxtil MG
+        <Navbar.Brand href="#inicio" className="d-flex align-items-center" aria-label="Real Têxtil MG - Página inicial">
+          <Logo />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" aria-label="Alternar menu de navegação" />
         <Navbar.Collapse id="main-navbar">
