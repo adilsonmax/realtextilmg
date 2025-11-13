@@ -1026,7 +1026,7 @@ main {
 }
 
 .product-card .card-text {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.9rem;
   margin-bottom: 0;
 }

@@ -35,7 +35,7 @@ const ProductImage = ({ src, alt, className = '', fallbackSrc, eager = false }: 
   }
 
   return (
-    <div className="product-image-container" style={{ position: 'relative', width: '100%', height: '100%' }}>
+    <>
       {isLoading && (
         <div 
           className="image-skeleton" 
@@ -48,7 +48,8 @@ const ProductImage = ({ src, alt, className = '', fallbackSrc, eager = false }: 
             background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
             backgroundSize: '200% 100%',
             animation: 'skeleton-loading 1.5s ease-in-out infinite',
-            borderRadius: 'inherit'
+            borderRadius: 'inherit',
+            zIndex: 1
           }}
           aria-hidden="true"
         />
@@ -65,11 +66,15 @@ const ProductImage = ({ src, alt, className = '', fallbackSrc, eager = false }: 
           display: 'block', 
           width: '100%', 
           height: '100%',
+          objectFit: 'cover',
           opacity: isLoading ? 0 : 1,
-          transition: 'opacity 0.3s ease-in-out'
+          transition: 'opacity 0.3s ease-in-out',
+          position: 'absolute',
+          top: 0,
+          left: 0
         }}
       />
-    </div>
+    </>
   )
 }
 
