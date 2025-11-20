@@ -21,37 +21,90 @@ const TshirtIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     style={{ display: 'block' }}
   >
+    {/* Corpo da camiseta */}
     <path
-      d="M22 16L18 20V46H46V20L42 16V12C42 10 40 8 38 8H26C24 8 22 10 22 12V16Z"
+      d="M20 22 L20 54 L44 54 L44 22"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
+    {/* Gola */}
+    <ellipse
+      cx="32"
+      cy="14"
+      rx="4"
+      ry="3"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+    />
+    {/* Manga direita raglan */}
     <path
-      d="M22 16L32 12L42 16"
+      d="M20 22 L16 18 L12 20 L12 28 L16 26 L20 28"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
+    {/* Costura manga direita */}
     <path
-      d="M18 20L14 22V28L18 26"
+      d="M20 22 L24 14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    {/* Manga esquerda raglan */}
+    <path
+      d="M44 22 L48 18 L52 20 L52 28 L48 26 L44 28"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
+    {/* Costura manga esquerda */}
     <path
-      d="M46 20L50 22V28L46 26"
+      d="M44 22 L40 14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    {/* Detalhes laterais */}
+    <path
+      d="M20 32 L18 32"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M20 38 L18 38"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M44 32 L46 32"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M44 38 L46 38"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    {/* Barra inferior */}
+    <path
+      d="M20 54 L44 54"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
-      strokeLinejoin="round"
-      fill="none"
     />
   </svg>
 )
