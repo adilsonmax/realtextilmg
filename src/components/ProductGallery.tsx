@@ -43,6 +43,7 @@ const TshirtIcon = () => (
 const ProductGallery = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set())
 
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product)
@@ -84,6 +85,28 @@ const ProductGallery = () => {
       'Telas, tules e arrastão': 'Nesta categoria, você encontrará bases tecnológicas desenvolvidas em diversos tipos de tear, compostas por fibras especiais que oferecem características únicas. Priorizam o visual e o toque, sem abrir mão da resistência e qualidade. Algumas dessas bases são indesmalháveis, tornando-as resistentes e sofisticadas, podendo ter elasticidade ou não. Por serem leves e confortáveis, apresentam secagem rápida e excelente respirabilidade. Indicações: Podem ser utilizadas na moda fitness, tanto em recortes quanto em peças de sobreposição. Na moda praia, são ideais para recortes de biquínis, maiôs e saídas de praia. Na moda casual, podem ser usadas em recortes, sobreposições e diversas outras aplicações.',
     }
     return descriptions[category] || ''
+  }
+
+  const getCategoryShortDescription = (category: ProductCategory): string => {
+    const shortDescriptions: Record<ProductCategory, string> = {
+      'Tecidos Leves': 'Bases tecnológicas de leve gramatura com filamentos extremamente finos. Oferecem proteção solar, conforto térmico, respirabilidade e secagem rápida.',
+      'Tecidos Médios': 'Bases de média gramatura com filamentos densos e boa cobertura. Proteção UV, resistência à água clorada e salgada, secagem rápida.',
+      'Tecidos Pesados': 'Alta gramatura com filamentos densos garantindo sustentação e firmeza. Tecnologias de proteção UV, compressão e alto desempenho.',
+      'Telas, tules e arrastão': 'Bases desenvolvidas em diversos tipos de tear com fibras especiais. Visual sofisticado, toque agradável, alta resistência e respirabilidade.',
+    }
+    return shortDescriptions[category] || ''
+  }
+
+  const toggleCategoryExpansion = (category: ProductCategory) => {
+    setExpandedCategories(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(category)) {
+        newSet.delete(category)
+      } else {
+        newSet.add(category)
+      }
+      return newSet
+    })
   }
 
   const getCategoryIcon = (category: ProductCategory): ReactElement => {
@@ -135,7 +158,28 @@ const ProductGallery = () => {
                   </span>
                   {category}
                 </h3>
-                <p className="category-description">{getCategoryDescription(category)}</p>
+                <div className="category-description-wrapper">
+                  {/* Descrição completa para desktop */}
+                  <p className="category-description category-description-full d-none d-md-block">
+                    {getCategoryDescription(category)}
+                  </p>
+                  
+                  {/* Descrição expansível para mobile */}
+                  <div className="d-block d-md-none">
+                    <p className="category-description">
+                      {expandedCategories.has(category) 
+                        ? getCategoryDescription(category)
+                        : getCategoryShortDescription(category)}
+                    </p>
+                    <button
+                      className="btn-read-more"
+                      onClick={() => toggleCategoryExpansion(category)}
+                      aria-label={expandedCategories.has(category) ? 'Ler menos' : 'Ler mais'}
+                    >
+                      {expandedCategories.has(category) ? 'Ler menos ▲' : 'Ler mais ▼'}
+                    </button>
+                  </div>
+                </div>
               </div>
               
               <Row className="g-4 mt-3">
