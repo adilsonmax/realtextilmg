@@ -13,7 +13,6 @@ const NavigationBar = () => {
         <Navbar.Collapse id="main-navbar">
                   <Nav className="ms-auto gap-2" role="navigation" aria-label="Menu principal">
                     <Nav.Link href="#inicio" onClick={() => window.location.hash = ''} aria-label="Ir para seção Início">Início</Nav.Link>
-                    <Nav.Link href="#catalogo" aria-label="Ir para seção Linhas de Tecidos">Linhas</Nav.Link>
                     <Nav.Link href="#galeria" aria-label="Ir para seção Catálogo de Produtos">Catálogo</Nav.Link>
                     <Nav.Link href="#promocoes" aria-label="Ir para seção Promoções">Promoções</Nav.Link>
                     <Nav.Link href="#contato" aria-label="Ir para seção Fale Conosco">Fale Conosco</Nav.Link>

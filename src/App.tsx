@@ -3,7 +3,6 @@ import NavigationBar from './components/NavigationBar'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import SocialMediaSection from './components/SocialMediaSection'
-import CatalogSection from './components/CatalogSection'
 import ProductGallery from './components/ProductGallery'
 import CatalogPage from './pages/CatalogPage'
 import PromotionsSection from './components/PromotionsSection'
@@ -43,7 +42,6 @@ function App() {
         {currentPage === 'home' ? (
           <>
             <HeroSection />
-            <CatalogSection />
             <ProductGallery />
             <PromotionsSection />
             <ContactSection onRequestQuote={() => setShowQuoteForm(true)} />

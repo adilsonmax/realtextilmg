@@ -60,46 +60,64 @@ const ProductGallery = () => {
     )
   }
 
+  // Agrupar produtos por categoria
+  const categories: ProductCategory[] = ['Tecidos Leves', 'Tecidos Médios', 'Tecidos Pesados', 'Telas, tules e arrastão']
+  const productsByCategory = categories.map(category => ({
+    category,
+    products: products.filter(p => p.category === category)
+  }))
+
   return (
     <>
-      <section id="galeria" className="section-padding">
+      <section id="galeria" className="section-padding bg-light">
         <Container>
           <div className="section-header text-center mb-5">
-            <h2 className="fw-semibold mb-3">Galeria de Produtos</h2>
-            <p className="text-muted">Explore nossa linha completa de tecidos tecnológicos</p>
+            <h2 className="fw-semibold mb-3">Catálogo de Produtos</h2>
+            <p className="text-muted">Tecidos tecnológicos organizados por categoria</p>
           </div>
-          <Row className="g-4">
-            {products.map((product) => (
-              <Col md={6} lg={4} xl={3} key={product.id}>
-                <Card 
-                  className="product-card h-100"
-                  onClick={() => handleProductClick(product)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div className="product-image-wrapper">
-                    <ProductImage
-                      src={product.images[0] || '/images/placeholder-product.jpg'}
-                      alt={product.title}
-                      className="product-card-image"
-                    />
-                    <div className="product-overlay">
-                      <Badge bg={getCategoryColor(product.category)} className="mb-2">
-                        {product.category}
-                      </Badge>
-                      <Button variant="light" size="sm">
-                        Ver Detalhes
-                      </Button>
-                    </div>
-                  </div>
-                  <Card.Body>
-                    <Card.Title className="h6 mb-1">{product.title}</Card.Title>
-                    <Card.Text className="small product-code-text mb-2"><strong>Código:</strong> {product.code}</Card.Text>
-                    <Card.Text className="small text-muted">{product.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+
+          {productsByCategory.map(({ category, products: categoryProducts }) => (
+            <div key={category} className="category-section mb-5">
+              <div className="category-header">
+                <h3 className="category-title">
+                  <Badge bg={getCategoryColor(category)} className="me-3 category-badge">
+                    {categoryProducts.length}
+                  </Badge>
+                  {category}
+                </h3>
+              </div>
+              
+              <Row className="g-4 mt-3">
+                {categoryProducts.map((product) => (
+                  <Col md={6} lg={4} xl={3} key={product.id}>
+                    <Card 
+                      className="product-card h-100"
+                      onClick={() => handleProductClick(product)}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <div className="product-image-wrapper">
+                        <ProductImage
+                          src={product.images[0] || '/images/placeholder-product.jpg'}
+                          alt={product.title}
+                          className="product-card-image"
+                        />
+                        <div className="product-overlay">
+                          <Button variant="light" size="sm">
+                            Ver Detalhes
+                          </Button>
+                        </div>
+                      </div>
+                      <Card.Body>
+                        <Card.Title className="h6 mb-1">{product.title}</Card.Title>
+                        <Card.Text className="small product-code-text mb-2"><strong>Código:</strong> {product.code}</Card.Text>
+                        <Card.Text className="small text-muted">{product.description}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          ))}
         </Container>
       </section>
 
