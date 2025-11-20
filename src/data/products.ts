@@ -694,7 +694,7 @@ export const products: Product[] = [
     title: 'Renda Arrastão II - Tipo Exportação - 2345',
     description: 'Formato rede com caimento excelente, ideal para exportação, com alto rendimento, fluidez e ventilação.',
     fullDescription: 'Formato rede, caimento excelente, exportação. Tecnologias de alto rendimento, fluidez e ventilação.',
-    images: ['/images/products/2345-1.jpg', '/images/products/2345-2.jpg', '/images/products/2345-3.jpg'],
+    images: ['/images/products/2345-4.jpg', '/images/products/2345-5.jpg', '/images/products/2345-6.jpg'],
     category: 'Telas, tules e arrastão',
     composition: '50% PA, 45% PES, 5% Elastano',
     width: '140 cm',
