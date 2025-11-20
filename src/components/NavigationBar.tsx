@@ -7,7 +7,7 @@ const NavigationBar = () => {
     <Navbar expand="lg" bg="dark" variant="dark" fixed="top" className="shadow-sm navigation-bar">
       <Container>
         <Navbar.Brand href="#inicio" className="d-flex align-items-center fw-bold text-white" aria-label="Real Têxtil MG - Página inicial">
-          Real Têxtil
+          Real Têxtil - A Moda em Movimento
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" aria-label="Alternar menu de navegação" />
         <Navbar.Collapse id="main-navbar">

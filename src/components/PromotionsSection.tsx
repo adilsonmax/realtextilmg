@@ -12,8 +12,8 @@ type Promotion = {
 
 const promotions: Promotion[] = [
   {
-    title: 'Combo Hotelaria',
-    description: 'Complemente sua linha de enxovais com descontos progressivos para quantidades acima de 200 peças.',
+    title: 'Confecções Esportivas',
+    description: 'Tecidos tecnológicos de alta performance para sua linha fitness e esportiva com descontos progressivos para quantidades acima de 200 peças.',
     highlight: 'até 20% OFF',
   },
   {

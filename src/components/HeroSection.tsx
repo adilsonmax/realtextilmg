@@ -64,7 +64,7 @@ const HeroSection = () => {
         />
       ))}
       
-      <div className="hero-buttons-container">
+      <div className="hero-buttons-container d-none d-md-flex">
         <a href="#galeria" className="hero-btn hero-btn-primary">
           Ver Catálogo
         </a>
