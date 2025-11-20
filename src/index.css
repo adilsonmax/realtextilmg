@@ -205,6 +205,7 @@ main {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
 }
 
 .hero-btn-primary {
@@ -219,16 +220,39 @@ main {
   color: #ffffff;
 }
 
-@media (max-width: 767px) {
+/* Mobile - Responsividade melhorada */
+@media (max-width: 576px) {
   .hero-buttons-container {
-    bottom: 2rem;
-    left: 15%;
-    gap: 1rem;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 320px;
   }
   
   .hero-btn {
-    padding: 0.85rem 1.75rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+  .hero-buttons-container {
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 0.85rem;
+    justify-content: center;
+  }
+  
+  .hero-btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -320,7 +344,19 @@ main {
 }
 
 /* Mobile - desabilitar fixed attachment para melhor performance */
-@media (max-width: 767px) {
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: 55vh;
+  }
+  
+  .hero-background {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
   .hero-section {
     min-height: 60vh;
   }
@@ -1478,22 +1514,6 @@ main {
 @media (max-width: 767px) {
   .section-padding {
     padding: 3rem 0;
-  }
-
-  .hero-section {
-    min-height: 80vh;
-    text-align: center;
-  }
-  
-  .hero-background {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll;
-  }
-  
-  /* Em mobile, garantir que a imagem não corte elementos importantes */
-  .hero-background.active {
-    background-attachment: scroll;
   }
 
   .hero-content {
