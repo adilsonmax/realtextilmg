@@ -6,37 +6,215 @@ import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
-import { FaUmbrellaBeach, FaRunning, FaTh } from 'react-icons/fa'
 import { products } from '../data/products'
 import type { Product, ProductCategory } from '../data/products'
 import ProductImage from './ProductImage'
 import type { ReactElement } from 'react'
 
+// Ícone de Camiseta para Tecidos Leves
 const TshirtIcon = () => (
   <svg
     width="40"
     height="40"
-    viewBox="0 0 60 60"
+    viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{ display: 'block' }}
   >
     <path
-      d="M20 20 L15 25 L15 45 L45 45 L45 25 L40 20 L40 15 L35 15 L35 10 L25 10 L25 15 L20 15 Z"
+      d="M22 16L18 20V46H46V20L42 16V12C42 10 40 8 38 8H26C24 8 22 10 22 12V16Z"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
     <path
-      d="M20 20 L30 15 L40 20"
+      d="M22 16L32 12L42 16"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
+    <path
+      d="M18 20L14 22V28L18 26"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M46 20L50 22V28L46 26"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  </svg>
+)
+
+// Ícone de Biquíni para Tecidos Médios
+const BikiniIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: 'block' }}
+  >
+    <path
+      d="M20 20C20 18 22 16 24 16H40C42 16 44 18 44 20V24C44 26 42 28 40 28H24C22 28 20 26 20 24V20Z"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M24 16L20 12"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M40 16L44 12"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M18 36C18 34 20 32 22 32H28C30 32 32 34 32 36V42C32 44 30 46 28 46H22C20 46 18 44 18 42V36Z"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M32 36C32 34 34 32 36 32H42C44 32 46 34 46 36V42C46 44 44 46 42 46H36C34 46 32 44 32 42V36Z"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M22 46L18 52"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M28 46L32 52"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M36 46L32 52"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M42 46L46 52"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
+// Ícone de Legging para Tecidos Pesados
+const LeggingIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: 'block' }}
+  >
+    <path
+      d="M22 10H42V18L38 46L36 58H28L26 46L22 18V10Z"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M22 10H42"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <line
+      x1="32"
+      y1="18"
+      x2="32"
+      y2="46"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <line
+      x1="38"
+      y1="38"
+      x2="41"
+      y2="38"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <line
+      x1="38"
+      y1="41"
+      x2="41"
+      y2="41"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <line
+      x1="38"
+      y1="44"
+      x2="41"
+      y2="44"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+)
+
+// Ícone de Tela/Rede para Telas, Tules e Arrastão
+const MeshIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: 'block' }}
+  >
+    <pattern id="mesh-pattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="currentColor" />
+      <line x1="4" y1="4" x2="8" y2="4" stroke="currentColor" strokeWidth="1" />
+      <line x1="4" y1="4" x2="4" y2="8" stroke="currentColor" strokeWidth="1" />
+    </pattern>
+    <rect x="12" y="12" width="40" height="40" fill="url(#mesh-pattern)" stroke="currentColor" strokeWidth="2" />
   </svg>
 )
 
@@ -112,11 +290,11 @@ const ProductGallery = () => {
   const getCategoryIcon = (category: ProductCategory): ReactElement => {
     const icons: Record<ProductCategory, ReactElement> = {
       'Tecidos Leves': <TshirtIcon />,
-      'Tecidos Médios': <FaUmbrellaBeach size={32} />,
-      'Tecidos Pesados': <FaRunning size={32} />,
-      'Telas, tules e arrastão': <FaTh size={32} />,
+      'Tecidos Médios': <BikiniIcon />,
+      'Tecidos Pesados': <LeggingIcon />,
+      'Telas, tules e arrastão': <MeshIcon />,
     }
-    return icons[category] || <FaTh size={32} />
+    return icons[category] || <MeshIcon />
   }
 
   if (products.length === 0) {
