@@ -184,9 +184,8 @@ main {
 /* Hero Buttons */
 .hero-buttons-container {
   position: absolute;
-  top: 50%;
+  bottom: 3rem;
   left: 25%;
-  transform: translateY(2rem);
   display: flex;
   gap: 1.5rem;
   z-index: 10;
@@ -222,9 +221,8 @@ main {
 
 @media (max-width: 767px) {
   .hero-buttons-container {
-    top: 50%;
+    bottom: 2rem;
     left: 15%;
-    transform: translateY(3rem);
     gap: 1rem;
   }
   
@@ -236,17 +234,15 @@ main {
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .hero-buttons-container {
-    top: 50%;
+    bottom: 2.5rem;
     left: 20%;
-    transform: translateY(2.5rem);
   }
 }
 
 @media (min-width: 1200px) {
   .hero-buttons-container {
-    top: 50%;
+    bottom: 3rem;
     left: 25%;
-    transform: translateY(2rem);
   }
 }
 
@@ -257,26 +253,19 @@ main {
   width: 100%;
   height: 100%;
   background-size: contain;
-  background-position: right center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
   z-index: 0;
   will-change: opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Garantir que a imagem ativa seja renderizada corretamente */
 .hero-background.active {
   opacity: 1;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* Ajustes específicos para diferentes tamanhos de tela */
@@ -286,7 +275,7 @@ main {
   }
   
   .hero-background {
-    background-position: right center;
+    background-position: center center;
     background-size: contain;
   }
   
@@ -305,7 +294,7 @@ main {
   }
   
   .hero-background {
-    background-position: right center;
+    background-position: center center;
     background-size: contain;
   }
   
@@ -325,7 +314,7 @@ main {
   }
   
   .hero-background {
-    background-position: right center;
+    background-position: center center;
     background-size: contain;
   }
 }
@@ -457,17 +446,17 @@ main {
 
 .hero-indicators {
   position: absolute;
-  bottom: 20px;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
-  z-index: 3;
+  gap: 0.75rem;
+  z-index: 10;
 }
 
 @media (min-width: 768px) {
   .hero-indicators {
-    bottom: 30px;
+    bottom: 2rem;
   }
 }
 
@@ -475,7 +464,7 @@ main {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -483,8 +472,9 @@ main {
 }
 
 .hero-indicator:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
 }
 
 .hero-indicator.active {

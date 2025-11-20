@@ -506,11 +506,11 @@ export const products: Product[] = [
   },
   {
     id: '35',
-    code: '2520',
-    title: 'Microfibra Pitton - 2520',
+    code: '2522',
+    title: 'Microfibra Pitton - 2522',
     description: 'Efeito enrugado, ideal para praia e fitness, estrutura sofisticada, com alta elasticidade e secagem rápida.',
     fullDescription: 'Efeito enrugado, praia e fitness, estrutura sofisticada. Tecnologias de alta elasticidade e secagem rápida.',
-    images: ['/images/products/2520-4.jpg', '/images/products/2520-5.jpg', '/images/products/2520-6.jpg'],
+    images: ['/images/products/2522-1.jpg', '/images/products/2522-2.jpg', '/images/products/2522-3.jpg'],
     category: 'Tecidos Pesados',
     composition: '90% Poliamida, 10% Elastano',
     width: '100 cm',
@@ -813,19 +813,5 @@ export const products: Product[] = [
     yield: '700 cm',
     technologies: ['Indesmalhável', 'Alta Resistência', 'Secagem Rápida'],
     indications: ['Esportivo', 'Bolsos Internos', 'Sobreposição']
-  },
-  {
-    id: '57',
-    code: 'ARR-DIVERSOS',
-    title: 'Arrastões Diversos - Variações',
-    description: 'Diversos padrões de rede, ideal para saídas praia e detalhes fitness, com alto rendimento, ventilação e fluidez.',
-    fullDescription: 'Diversos padrões de rede, saídas praia, detalhes fitness. Tecnologias de alto rendimento, ventilação e fluidez.',
-    images: [],
-    category: 'Telas, tules e arrastão',
-    composition: 'Diversas (PA/PES/Elastano)',
-    width: '140 cm',
-    yield: '600-800 cm',
-    technologies: ['Alto Rendimento', 'Ventilação', 'Fluidez'],
-    indications: ['Moda Praia', 'Detalhes', 'Fitness']
   }
 ]

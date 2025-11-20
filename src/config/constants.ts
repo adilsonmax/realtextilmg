@@ -25,7 +25,7 @@ export const COMPANY_INFO = {
     googleBusiness: 'https://g.page/r/CZtl1A8b-P5wEBM/review'
   },
   businessHours: {
-    weekdays: 'Segunda a sexta, das 8h às 18h'
+    weekdays: 'Segunda a sexta, das 7h30 às 17h30'
   }
 } as const
 
