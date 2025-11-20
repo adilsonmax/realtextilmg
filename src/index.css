@@ -1046,6 +1046,17 @@ main {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.footer-disclaimer {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.footer-disclaimer strong {
+  color: #fff;
+  font-weight: 600;
+}
+
 /* Catalog Page */
 .catalog-page-header {
   background: linear-gradient(135deg, rgba(88, 114, 142, 0.1), rgba(88, 114, 142, 0.05));
