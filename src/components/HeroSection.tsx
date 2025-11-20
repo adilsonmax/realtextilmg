@@ -4,9 +4,9 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0)
   
   const images = [
+    '/images/hero-main.jpg',
     '/images/hero-1.jpg',
-    '/images/hero-2.jpg',
-    '/images/hero-main.jpg'
+    '/images/hero-2.jpg'
   ]
 
   // Preload das imagens
@@ -29,11 +29,11 @@ const HeroSection = () => {
     }
   }, [])
 
-  // Rotação automática das imagens a cada 5 segundos
+  // Rotação automática das imagens a cada 10 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length)
-    }, 5000)
+    }, 10000)
 
     return () => clearInterval(interval)
   }, [images.length])
