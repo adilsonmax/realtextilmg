@@ -10,11 +10,9 @@ import ContactSection from './components/ContactSection'
 import MapSection from './components/MapSection'
 import Footer from './components/Footer'
 import WhatsAppFloatButton from './components/WhatsAppFloatButton'
-import QuoteForm from './components/QuoteForm'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'catalog'>('home')
-  const [showQuoteForm, setShowQuoteForm] = useState(false)
 
   // Detectar mudança de hash para navegação
   useEffect(() => {
@@ -44,7 +42,7 @@ function App() {
             <HeroSection />
             <ProductGallery />
             <PromotionsSection />
-            <ContactSection onRequestQuote={() => setShowQuoteForm(true)} />
+            <ContactSection />
             <MapSection />
             <SocialMediaSection />
             <AboutSection />
@@ -55,7 +53,6 @@ function App() {
       </main>
       <Footer />
       <WhatsAppFloatButton />
-      <QuoteForm show={showQuoteForm} onHide={() => setShowQuoteForm(false)} />
     </div>
   )
 }

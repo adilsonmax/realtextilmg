@@ -380,12 +380,7 @@ const CatalogPage = () => {
               <Button 
                 variant="primary" 
                 onClick={() => {
-                  handleCloseModal()
-                  // Navegar para contato após fechar modal
-                  setTimeout(() => {
-                    window.location.hash = '#contato'
-                    window.scrollTo({ top: 0, behavior: 'smooth' })
-                  }, 300)
+                  window.open('https://wa.me/5537999813287?text=Olá, vim do site da RealTextilMG e gostaria de solicitar um orçamento.', '_blank')
                 }}
                 aria-label="Solicitar orçamento para este produto"
               >

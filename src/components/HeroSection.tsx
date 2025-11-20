@@ -39,7 +39,7 @@ const HeroSection = () => {
   }, [images.length])
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5537999813287?text=Olá, gostaria de solicitar um orçamento', '_blank')
+    window.open('https://wa.me/5537999813287?text=Olá, vim do site da RealTextilMG e gostaria de solicitar um orçamento.', '_blank')
   }
 
   const goToImage = (index: number) => {

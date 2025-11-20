@@ -5,11 +5,10 @@ import Button from 'react-bootstrap/Button'
 import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa'
 import { COMPANY_INFO, WHATSAPP_URL } from '../config/constants'
 
-interface ContactSectionProps {
-  onRequestQuote?: () => void
-}
-
-const ContactSection = ({ onRequestQuote }: ContactSectionProps) => {
+const ContactSection = () => {
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5537999813287?text=Olá, vim do site da RealTextilMG e gostaria de solicitar um orçamento.', '_blank')
+  }
   return (
     <section id="contato" className="section-padding">
       <Container>
@@ -24,7 +23,7 @@ const ContactSection = ({ onRequestQuote }: ContactSectionProps) => {
               <Button
                 size="lg"
                 className="btn-brand-primary"
-                onClick={onRequestQuote}
+                onClick={handleWhatsApp}
               >
                 Solicitar Orçamento
               </Button>
