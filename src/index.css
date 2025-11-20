@@ -1049,12 +1049,18 @@ main {
 .footer-disclaimer {
   max-width: 900px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.8;
+}
+
+.footer-disclaimer p {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .footer-disclaimer strong {
   color: #fff;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
 /* Catalog Page */

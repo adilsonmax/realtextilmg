@@ -8,7 +8,7 @@ const Footer = () => {
       <Container>
         {/* Disclaimer */}
         <div className="footer-disclaimer text-center mb-4">
-          <p className="text-white-50 small mb-2">
+          <p className="text-white-50 mb-2">
             <strong>Disclaimer:</strong> As cores dos produtos exibidos nas imagens podem variar devido às configurações de tela e iluminação. 
             Recomendamos solicitar amostras físicas antes da compra. Disponibilidade e especificações técnicas sujeitas a alterações sem aviso prévio. 
             Vendas exclusivas para confeccionistas e empresas do setor têxtil.
