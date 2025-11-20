@@ -308,7 +308,7 @@ main {
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -550,7 +550,7 @@ main {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0.75rem 2rem;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .btn-brand-primary:hover,
@@ -568,7 +568,7 @@ main {
   padding: 0.75rem 2rem;
   border-radius: 8px;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.125rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
 }
@@ -605,7 +605,7 @@ main {
 .section-header p {
   max-width: 640px;
   margin: 0 auto;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   color: #6b7280;
 }
@@ -1535,7 +1535,7 @@ main {
   }
   
   .hero-content .lead {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   
   .logo-image {
@@ -1609,7 +1609,7 @@ main {
 }
 
 .about-content p {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.7;
   color: #495057;
   margin-bottom: 1.25rem;
@@ -1706,7 +1706,7 @@ main {
 
 @media (max-width: 768px) {
   .about-content p {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   
   .about-content .lead {
@@ -1815,7 +1815,7 @@ main {
 
 .contact-value,
 .social-value {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #212529;
   font-weight: 600;
 }
