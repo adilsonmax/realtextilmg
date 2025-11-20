@@ -46,6 +46,16 @@ const ProductGallery = () => {
     return colors[category] || 'secondary'
   }
 
+  const getCategoryDescription = (category: ProductCategory): string => {
+    const descriptions: Record<ProductCategory, string> = {
+      'Tecidos Leves': 'Tecidos com baixa gramatura (até 150 g/m²), ideais para peças com maior mobilidade e respirabilidade. Perfeitos para atividades físicas intensas e clima quente.',
+      'Tecidos Médios': 'Tecidos com gramatura intermediária (150-220 g/m²), oferecendo equilíbrio entre conforto e resistência. Versáteis para diversas aplicações fitness e moda esportiva.',
+      'Tecidos Pesados': 'Tecidos com alta gramatura (acima de 220 g/m²), proporcionando maior compressão, sustentação e durabilidade. Ideais para modelagem e peças de alta performance.',
+      'Telas, tules e arrastão': 'Tecidos vazados e transparentes, perfeitos para sobreposições, detalhes e acabamentos. Agregam estilo e ventilação às peças.',
+    }
+    return descriptions[category] || ''
+  }
+
   if (products.length === 0) {
     return (
       <section id="galeria" className="section-padding">
@@ -78,13 +88,14 @@ const ProductGallery = () => {
 
           {productsByCategory.map(({ category, products: categoryProducts }) => (
             <div key={category} className="category-section mb-5">
-              <div className="category-header">
+              <div className="category-header mb-3">
                 <h3 className="category-title">
                   <Badge bg={getCategoryColor(category)} className="me-3 category-badge">
                     {categoryProducts.length}
                   </Badge>
                   {category}
                 </h3>
+                <p className="category-description">{getCategoryDescription(category)}</p>
               </div>
               
               <Row className="g-4 mt-3">

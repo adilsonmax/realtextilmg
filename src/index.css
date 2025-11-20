@@ -1903,6 +1903,15 @@ main {
   border-bottom: 3px solid #0d6efd;
 }
 
+.category-description {
+  font-size: 1.125rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  padding-left: 0.5rem;
+}
+
 .category-badge {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
