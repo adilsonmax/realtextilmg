@@ -6,9 +6,39 @@ import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
+import { FaUmbrellaBeach, FaRunning, FaTh } from 'react-icons/fa'
 import { products } from '../data/products'
 import type { Product, ProductCategory } from '../data/products'
 import ProductImage from './ProductImage'
+import type { ReactElement } from 'react'
+
+const TshirtIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 60 60"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ display: 'block' }}
+  >
+    <path
+      d="M20 20 L15 25 L15 45 L45 45 L45 25 L40 20 L40 15 L35 15 L35 10 L25 10 L25 15 L20 15 Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M20 20 L30 15 L40 20"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  </svg>
+)
 
 const ProductGallery = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
@@ -56,6 +86,16 @@ const ProductGallery = () => {
     return descriptions[category] || ''
   }
 
+  const getCategoryIcon = (category: ProductCategory): ReactElement => {
+    const icons: Record<ProductCategory, ReactElement> = {
+      'Tecidos Leves': <TshirtIcon />,
+      'Tecidos Médios': <FaUmbrellaBeach size={32} />,
+      'Tecidos Pesados': <FaRunning size={32} />,
+      'Telas, tules e arrastão': <FaTh size={32} />,
+    }
+    return icons[category] || <FaTh size={32} />
+  }
+
   if (products.length === 0) {
     return (
       <section id="galeria" className="section-padding">
@@ -90,9 +130,9 @@ const ProductGallery = () => {
             <div key={category} className="category-section mb-5">
               <div className="category-header mb-3">
                 <h3 className="category-title">
-                  <Badge bg={getCategoryColor(category)} className="me-3 category-badge">
-                    {categoryProducts.length}
-                  </Badge>
+                  <span className="category-icon-badge me-3">
+                    {getCategoryIcon(category)}
+                  </span>
                   {category}
                 </h3>
                 <p className="category-description">{getCategoryDescription(category)}</p>
