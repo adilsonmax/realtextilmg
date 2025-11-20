@@ -33,6 +33,11 @@ const CatalogPage = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  // Scroll para o topo quando a página for carregada
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+
   // Atualizar categoria quando a URL mudar
   useEffect(() => {
     const handleHashChange = () => {
