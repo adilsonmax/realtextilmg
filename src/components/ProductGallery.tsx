@@ -82,12 +82,12 @@ const ProductGallery = () => {
 
   const getCategoryIcon = (category: ProductCategory): ReactElement => {
     const iconImages: Record<ProductCategory, string> = {
-      'Tecidos Leves': '/images/categories/tshirt.svg',
-      'Tecidos Médios': '/images/categories/bikini.svg',
-      'Tecidos Pesados': '/images/categories/legging.svg',
-      'Telas, tules e arrastão': '/images/categories/mesh.svg',
+      'Tecidos Leves': '/images/categories/Tecidos Leves.png',
+      'Tecidos Médios': '/images/categories/Tecidos Médios.png',
+      'Tecidos Pesados': '/images/categories/Tecidos Pesados.png',
+      'Telas, tules e arrastão': '/images/categories/Tules.png',
     }
-    const iconPath = iconImages[category] || '/images/categories/mesh.svg'
+    const iconPath = iconImages[category] || '/images/categories/Tules.png'
     return <img src={iconPath} alt={`Ícone ${category}`} style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
   }
 
