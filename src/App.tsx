@@ -43,13 +43,13 @@ function App() {
         {currentPage === 'home' ? (
           <>
             <HeroSection />
-            <AboutSection />
-            <SocialMediaSection />
             <CatalogSection />
             <ProductGallery />
             <PromotionsSection />
             <ContactSection onRequestQuote={() => setShowQuoteForm(true)} />
             <MapSection />
+            <SocialMediaSection />
+            <AboutSection />
           </>
         ) : (
           <CatalogPage />

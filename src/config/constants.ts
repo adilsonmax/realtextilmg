@@ -22,7 +22,7 @@ export const COMPANY_INFO = {
     facebook: 'https://www.facebook.com/realtextilmg',
     instagram: 'https://www.instagram.com/realtextilmg',
     tiktok: 'https://www.tiktok.com/@realtextilmg',
-    googleBusiness: 'https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review'
+    googleBusiness: 'https://g.page/r/CZtl1A8b-P5wEBM/review'
   },
   businessHours: {
     weekdays: 'Segunda a sexta, das 8h às 18h'
