@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import NavigationBar from './components/NavigationBar'
 import HeroSection from './components/HeroSection'
+import AboutSection from './components/AboutSection'
+import SocialMediaSection from './components/SocialMediaSection'
 import CatalogSection from './components/CatalogSection'
 import ProductGallery from './components/ProductGallery'
 import CatalogPage from './pages/CatalogPage'
@@ -40,7 +42,9 @@ function App() {
       <main id="main-content">
         {currentPage === 'home' ? (
           <>
-            <HeroSection onRequestQuote={() => setShowQuoteForm(true)} />
+            <HeroSection />
+            <AboutSection />
+            <SocialMediaSection />
             <CatalogSection />
             <ProductGallery />
             <PromotionsSection />

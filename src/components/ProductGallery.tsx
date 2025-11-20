@@ -93,8 +93,8 @@ const ProductGallery = () => {
                   </div>
                   <Card.Body>
                     <Card.Title className="h6 mb-1">{product.title}</Card.Title>
-                    <Card.Text className="small text-muted mb-2">Código: {product.code}</Card.Text>
-                    <Card.Text className="small">{product.description}</Card.Text>
+                    <Card.Text className="small product-code-text mb-2"><strong>Código:</strong> {product.code}</Card.Text>
+                    <Card.Text className="small text-muted">{product.description}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
