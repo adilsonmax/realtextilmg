@@ -331,7 +331,7 @@ const ProductGallery = () => {
               <Button 
                 variant="primary" 
                 onClick={() => {
-                  window.open('https://wa.me/5537999813287?text=Olá, vim do site da RealTextilMG e gostaria de solicitar um orçamento.', '_blank')
+                  window.open('https://wa.me/5537999813287?text=Olá, vim do site da Real Textil MG e gostaria de solicitar um orçamento.', '_blank')
                 }}
                 aria-label="Solicitar orçamento para este produto"
               >

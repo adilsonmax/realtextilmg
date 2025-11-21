@@ -7,7 +7,7 @@ import { COMPANY_INFO, WHATSAPP_URL } from '../config/constants'
 
 const ContactSection = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5537999813287?text=Olá, vim do site da RealTextilMG e gostaria de solicitar um orçamento.', '_blank')
+    window.open('https://wa.me/5537999813287?text=Olá, vim do site da Real Textil MG e gostaria de solicitar um orçamento.', '_blank')
   }
   return (
     <section id="contato" className="section-padding">
