@@ -324,6 +324,20 @@ const ProductGallery = () => {
                 </div>
               </div>
             </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseModal} aria-label="Fechar modal">
+                Fechar
+              </Button>
+              <Button 
+                variant="primary" 
+                onClick={() => {
+                  window.open('https://wa.me/5537999813287?text=Olá, vim do site da RealTextilMG e gostaria de solicitar um orçamento.', '_blank')
+                }}
+                aria-label="Solicitar orçamento para este produto"
+              >
+                Solicitar Orçamento
+              </Button>
+            </Modal.Footer>
           </>
         )}
       </Modal>
