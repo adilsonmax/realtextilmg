@@ -1444,15 +1444,15 @@ main {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   background: #25d366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 32px;
+  font-size: 40px;
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
   z-index: 1000;
   transition: all 0.3s ease;
@@ -1486,9 +1486,9 @@ main {
 
 @media (max-width: 768px) {
   .whatsapp-float-button {
-    width: 55px;
-    height: 55px;
-    font-size: 28px;
+    width: 65px;
+    height: 65px;
+    font-size: 34px;
     bottom: 20px;
     right: 20px;
   }
